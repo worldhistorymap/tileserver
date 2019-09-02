@@ -2,6 +2,8 @@ FROM golang:1.12.0-alpine3.9 as build-env
 RUN apk add --update --no-cache ca-certificates git
 
 WORKDIR /src
+COPY main.go main.go
+COPY pkg pkg
 COPY go.mod .
 COPY go.sum .
 
